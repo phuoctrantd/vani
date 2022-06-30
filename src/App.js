@@ -1,9 +1,21 @@
 import './assets/style.css';
-import Vani from './Vani';
+import Vani from './components/Vani';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import NotFound from './components/NotFound';
 
 function App() {
   return (
-    <Vani></Vani>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/:voucher_id" element={<Vani />} />
+      <Route path="*" element={<NotFound />} />
+        
+      </Routes>
+  </BrowserRouter>
   );
 }
 
