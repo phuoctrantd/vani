@@ -1,7 +1,7 @@
 import React from "react";
 
 function Modal({ setOpenModal, voucher_id }) {
-    console.log(voucher_id);
+    
   return (
     
     <>

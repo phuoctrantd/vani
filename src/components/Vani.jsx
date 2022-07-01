@@ -20,7 +20,7 @@ function Vani() {
   const { voucher_id } = useParams();
   const md5VoucherId = md5(voucher_id);
   
-  console.log(md5VoucherId);
+ 
   return (
     <>
       {process.env.REACT_APP_VANI_KEY.includes(md5VoucherId) ? (
