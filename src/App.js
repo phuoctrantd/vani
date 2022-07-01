@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/:voucher_id" element={<Vani />} />
+      <Route path="/Lotteria/:voucher_id" element={<Vani />} />
       <Route path="*" element={<NotFound />} />
         
       </Routes>
