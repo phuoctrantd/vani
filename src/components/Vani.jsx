@@ -20,30 +20,21 @@ function Vani() {
   const { voucher_id } = useParams();
   const md5VoucherId = md5(voucher_id);
   const axios = require('axios').default;
-  const [key,setKey] = useState([])
+  const [coupons , setCoupons] = useState("")
+
+  useEffect(() => {
+    axios.get("https://my-json-server.typicode.com/phong-phung-phinh/vani/vani_key")
+      .then(res => {
+        setCoupons(res.data.coupons);
+      })
+  }, [axios])
 
 
-
-useEffect(() => {
-  axios.get("https://my-json-server.typicode.com/phong-phung-phinh/vani/vani_key",{
-    params: {
-      coupons: md5VoucherId
-    }
-  })
-  .then(res => {
-    setKey(res.data);
-  })
-},[])
-  
-  
-
-   
-  
- 
   return (
     <>
-     {
-        key.coupons.includes(md5VoucherId) ? 
+    
+    {
+        coupons.includes(md5VoucherId) ? 
         (<div>
           <div className="fixed-top hopthu">
             <p>Hộp thư</p>
@@ -211,6 +202,7 @@ useEffect(() => {
       }
       
     </>
+    
   );
 }
 
@@ -218,4 +210,3 @@ export default Vani;
 
 
 
- 
