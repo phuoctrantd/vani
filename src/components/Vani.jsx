@@ -20,7 +20,7 @@ function Vani() {
   const { voucher_id } = useParams();
   const md5VoucherId = md5(voucher_id);
   const axios = require('axios').default;
-  const [key,setKey] = useState(1)
+  const [key,setKey] = useState([])
 
 
 
@@ -30,7 +30,6 @@ useEffect(() => {
       coupons: md5VoucherId
     }
   })
-
   .then(res => {
     setKey(res.data);
   })
@@ -43,7 +42,7 @@ useEffect(() => {
  
   return (
     <>
-      {
+     {
         key.coupons.includes(md5VoucherId) ? 
         (<div>
           <div className="fixed-top hopthu">
@@ -219,3 +218,4 @@ export default Vani;
 
 
 
+ 
