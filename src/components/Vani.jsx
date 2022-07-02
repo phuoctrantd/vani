@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../assets/img/logo.jpg";
 import icon1 from "../assets/img/icon1.jpg";
 import icon2 from "../assets/img/icon2.jpg";
@@ -19,12 +19,33 @@ function Vani() {
   const [modalOpen, setModalOpen] = useState(0, 1, 2);
   const { voucher_id } = useParams();
   const md5VoucherId = md5(voucher_id);
+  const axios = require('axios').default;
+  const [key,setKey] = useState(1)
+
+
+
+useEffect(() => {
+  axios.get("https://my-json-server.typicode.com/phong-phung-phinh/vani/vani_key",{
+    params: {
+      coupons: md5VoucherId
+    }
+  })
+
+  .then(res => {
+    setKey(res.data);
+  })
+},[])
+  
+  
+
+   
   
  
   return (
     <>
-      {process.env.REACT_APP_VANI_KEY.includes(md5VoucherId) ? (
-        <div>
+      {
+        key.coupons.includes(md5VoucherId) ? 
+        (<div>
           <div className="fixed-top hopthu">
             <p>Hộp thư</p>
           </div>
@@ -96,7 +117,7 @@ function Vani() {
                   >
                     <i className="bi bi-check" style={{ fontSize: 25 }} />
                     {modalOpen == 0 && <p className="txtsd">Sử dụng</p>}
-
+      
                     {modalOpen == 2 && <p className="txtdsd">Đã sử dụng</p>}
                   </button>
                   {modalOpen == 1 && (
@@ -184,10 +205,12 @@ function Vani() {
               </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <NotFound />
-      )}
+        </div>)
+          :
+          (<NotFound />)
+
+      }
+      
     </>
   );
 }
