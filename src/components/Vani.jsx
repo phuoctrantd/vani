@@ -174,21 +174,16 @@ function Vani() {
       <div className="fixed-bottom menu">
         <div className="row">
           <div className="col col1">
-            
-              <button onClick={() => history.push(`/Home/${voucher_id}`)}>
+            <Link to={`/Home/${voucher_id}`}>
             <img className="icon2" src={nha} alt />
-
             <p className="txt2">Trang chủ</p>
-              </button>
-            
+            </Link>
           </div>
           <div className="col col1">
-          <button onClick={() => history.push(`/Coin/${voucher_id}`)}>
-          
+          <Link to={`/Coin/${voucher_id}`}>
             <img className="icon2" src={nha2} alt />
             <p className="txt2">Vani Xu</p>
-           
-            </button>
+            </Link>
           </div>
           <div className="col col1">
             <img className="icon2" src={nha3} alt />
