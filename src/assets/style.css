@@ -296,3 +296,13 @@ hr{
 .h1NotFound{
     text-align: center;
 }
+.pageOther{
+    width: 100%;
+}
+.imgactive{
+    filter: brightness(0) saturate(100%) invert(12%) sepia(100%) saturate(5770%) hue-rotate(266deg) brightness(73%) contrast(103%) ;
+}
+
+.imgnull{
+    filter: brightness(0) saturate(100%) invert(99%) sepia(18%) saturate(697%) hue-rotate(294deg) brightness(86%) contrast(86%);
+}

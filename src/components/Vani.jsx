@@ -15,6 +15,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { md5 } from "../md5";
 import NotFound from "./NotFound";
+import { Link } from "react-router-dom";
 function Vani() {
   const [modalOpen, setModalOpen] = useState(0, 1, 2);
   const { voucher_id } = useParams();
@@ -171,23 +172,28 @@ function Vani() {
       <div className="fixed-bottom menu">
         <div className="row">
           <div className="col col1">
+            <Link to={`/Home/${voucher_id}`}>
             <img className="icon2" src={nha} alt />
             <p className="txt2">Trang chủ</p>
+            </Link>
           </div>
           <div className="col col1">
+          <Link to={`/Coin/${voucher_id}`}>
             <img className="icon2" src={nha2} alt />
             <p className="txt2">Vani Xu</p>
+            </Link>
           </div>
           <div className="col col1">
             <img className="icon2" src={nha3} alt />
-            <p />
             <button className="txtht" onClick="openFullscreen();">
               Hộp thư
             </button>
           </div>
           <div className="col col1">
+          <Link to={`/Setting/${voucher_id}`}>
             <img className="icon2" src={nha4} alt />
             <p className="txt2">Cài đặt</p>
+            </Link>
           </div>
         </div>
       </div>
