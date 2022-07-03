@@ -16,12 +16,14 @@ import { useParams } from "react-router-dom";
 import { md5 } from "../md5";
 import NotFound from "./NotFound";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 function Vani() {
   const [modalOpen, setModalOpen] = useState(0, 1, 2);
   const { voucher_id } = useParams();
   const md5VoucherId = md5(voucher_id);
   const axios = require('axios').default;
   const [coupons, setCoupons] = useState("")
+  const history = useHistory();
 
   useEffect(() => {
     axios.get("https://my-json-server.typicode.com/phong-phung-phinh/vani/vani_key")
@@ -172,20 +174,25 @@ function Vani() {
       <div className="fixed-bottom menu">
         <div className="row">
           <div className="col col1">
-            <Link to={`/Home/${voucher_id}`}>
+            
+              <button onClick={() => history.push(`/Home/${voucher_id}`)}>
             <img className="icon2" src={nha} alt />
+
             <p className="txt2">Trang chủ</p>
-            </Link>
+              </button>
+            
           </div>
           <div className="col col1">
-          <Link to={`/Coin/${voucher_id}`}>
+          <button onClick={() => history.push(`/Coin/${voucher_id}`)}>
+          
             <img className="icon2" src={nha2} alt />
             <p className="txt2">Vani Xu</p>
-            </Link>
+           
+            </button>
           </div>
           <div className="col col1">
             <img className="icon2" src={nha3} alt />
-            <button className="txtht" onClick="openFullscreen();">
+            <button className="txtht" >
               Hộp thư
             </button>
           </div>
