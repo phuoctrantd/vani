@@ -16,7 +16,7 @@ function App() {
     
     <Switch>
       <Route path="/Lotteria/:voucher_id" exact><Vani></Vani> </Route>
-      <Route path="/Home/:voucher_id" element={<Home />} />
+      <Route path="/Home/:voucher_id" exact ><Home /></Route>
       <Route path="/Coin/:voucher_id" element={<Coin />} />
       <Route path="/Setting/:voucher_id" element={<Setting />} />
       <Route path="*" element={<NotFound />} />
