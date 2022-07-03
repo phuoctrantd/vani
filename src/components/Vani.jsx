@@ -16,14 +16,16 @@ import { useParams } from "react-router-dom";
 import { md5 } from "../md5";
 import NotFound from "./NotFound";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+
 function Vani() {
   const [modalOpen, setModalOpen] = useState(0, 1, 2);
   const { voucher_id } = useParams();
   const md5VoucherId = md5(voucher_id);
   const axios = require('axios').default;
   const [coupons, setCoupons] = useState("")
-  const history = useHistory();
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
 
   useEffect(() => {
     axios.get("https://my-json-server.typicode.com/phong-phung-phinh/vani/vani_key")
@@ -32,6 +34,8 @@ function Vani() {
       })
   }, [axios])
 
+ 
+  
 
   return (
     coupons ? ( coupons.includes(md5VoucherId) ?
