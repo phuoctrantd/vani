@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
     
     <Switch>
-      <Route path="/Lotteria/:voucher_id" exact><Vani></Vani> </Route>
+      <Route path="/:voucher_id" exact><Vani></Vani> </Route>
       <Route path="/Home/:voucher_id" exact ><Home /></Route>
       <Route path="/Coin/:voucher_id" exact ><Coin /></Route>
       <Route path="/Setting/:voucher_id" exact > <Setting /></Route>
