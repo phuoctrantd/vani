@@ -19,7 +19,7 @@ function Coin() {
       <div className="fixed-bottom menu">
         <div className="row">
           <div className="col col1">
-            <Link to={`lotteria/home/${voucher_id}`}>
+            <Link to={`/lotteria/home/${voucher_id}`}>
               <img className="icon2" src={nha} alt />
               <p className="txt2">Trang chủ</p>
             </Link>
@@ -36,7 +36,7 @@ function Coin() {
             </Link>
           </div>
           <div className="col col1">
-            <Link to={`lotteria/setting/${voucher_id}`}>
+            <Link to={`/lotteria/setting/${voucher_id}`}>
               <img className="icon2 " src={nha4} alt />
               <p className="txt2">Cài đặt</p>
             </Link>
