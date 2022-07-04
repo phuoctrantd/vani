@@ -175,7 +175,7 @@ function Vani() {
       <div className="fixed-bottom menu">
         <div className="row">
           <div className="col col1">
-            <Link to={`/Home/?voucher_id=${voucher_id}`}>
+            <Link to={`/lotteria/home/?voucher_id=${voucher_id}`}>
             <img className="icon2" src={nha} alt />
             <p className="txt2">Trang chủ</p>
             </Link>
