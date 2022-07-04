@@ -23,19 +23,19 @@ function Home() {
           </div>
 
           <div className="col col1">
-          <Link to={`lotteria/coin/${voucher_id}`}>
+          <Link to={`/coin/${voucher_id}`}>
           <img className="icon2 " src={nha2} alt />
               <p className="txt2">Vani Xu</p>
             </Link>
           </div>
           <div className="col col1">
-            <Link to={`/lotteria/?voucher_id=${voucher_id}`}>
+            <Link to={`/?voucher_id=${voucher_id}`}>
               <img className="icon2 imgnull" src={nha3} alt />
               <p className="txt2">Hộp thư</p>
             </Link>
           </div>
           <div className="col col1">
-            <Link to={`lotteria/setting/${voucher_id}`}>
+            <Link to={`/setting/${voucher_id}`}>
               <img className="icon2 " src={nha4} alt />
               <p className="txt2">Cài đặt</p>
             </Link>
