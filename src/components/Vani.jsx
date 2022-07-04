@@ -25,7 +25,7 @@ function Vani() {
   let voucher_id = params.voucher_id; 
   const md5VoucherId = md5(voucher_id);
   useEffect(() => {
-    axios.get("http://localhost:3000/vani_key")
+    axios.get("https://my-json-server.typicode.com/phong-phung-phinh/vani/vani_key")
       .then(res => {
         setCoupons(res.data.coupons);
       })
