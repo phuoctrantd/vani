@@ -8,7 +8,10 @@ import nha4 from "../assets/img/nha4.jpg";
 import { useParams } from "react-router-dom";
 
 function Home() {
-  const { voucher_id } = useParams();
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  let voucher_id = params.voucher_id; 
   return (
     <>
     <img className='pageOther' src={home}></img>
@@ -26,7 +29,7 @@ function Home() {
             </Link>
           </div>
           <div className="col col1">
-            <Link to={`/Lotteria/${voucher_id}`}>
+            <Link to={`/Lotteria/?voucher_id=${voucher_id}`}>
               <img className="icon2 imgnull" src={nha3} alt />
               <p className="txt2">Hộp thư</p>
             </Link>

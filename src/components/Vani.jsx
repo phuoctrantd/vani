@@ -12,28 +12,25 @@ import nha3 from "../assets/img/nha3.jpg";
 import nha4 from "../assets/img/nha4.jpg";
 import Modal from "./Modal";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 import { md5 } from "../md5";
 import NotFound from "./NotFound";
 import { Link } from "react-router-dom";
-
 function Vani() {
   const [modalOpen, setModalOpen] = useState(0, 1, 2);
-  const { voucher_id } = useParams();
-  const md5VoucherId = md5(voucher_id);
   const axios = require('axios').default;
   const [coupons, setCoupons] = useState("")
   const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
   });
-
+  let voucher_id = params.voucher_id; 
+  const md5VoucherId = md5(voucher_id);
   useEffect(() => {
-    axios.get("https://my-json-server.typicode.com/phong-phung-phinh/vani/vani_key")
+    axios.get("http://localhost:3000/vani_key")
       .then(res => {
         setCoupons(res.data.coupons);
       })
   }, [axios])
-
+ 
  
   
 
@@ -178,7 +175,7 @@ function Vani() {
       <div className="fixed-bottom menu">
         <div className="row">
           <div className="col col1">
-            <Link to={`/Home/${voucher_id}`}>
+            <Link to={`/Home/?voucher_id=${voucher_id}`}>
             <img className="icon2" src={nha} alt />
             <p className="txt2">Trang chủ</p>
             </Link>
