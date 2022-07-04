@@ -175,13 +175,13 @@ function Vani() {
       <div className="fixed-bottom menu">
         <div className="row">
           <div className="col col1">
-            <Link to={`/lotteria/home/?voucher_id=${voucher_id}`}>
+            <Link to={`/home/?voucher_id=${voucher_id}`}>
             <img className="icon2" src={nha} alt />
             <p className="txt2">Trang chủ</p>
             </Link>
           </div>
           <div className="col col1">
-          <Link to={`lotteria/coin/${voucher_id}`}>
+          <Link to={`/coin/${voucher_id}`}>
             <img className="icon2" src={nha2} alt />
             <p className="txt2">Vani Xu</p>
             </Link>
@@ -193,7 +193,7 @@ function Vani() {
             </button>
           </div>
           <div className="col col1">
-          <Link to={`lotteria/setting/${voucher_id}`}>
+          <Link to={`/setting/${voucher_id}`}>
             <img className="icon2" src={nha4} alt />
             <p className="txt2">Cài đặt</p>
             </Link>
