@@ -23,7 +23,7 @@ function Home() {
           </div>
 
           <div className="col col1">
-          <Link to={`/Coin/${voucher_id}`}>
+          <Link to={`lotteria/coin/${voucher_id}`}>
           <img className="icon2 " src={nha2} alt />
               <p className="txt2">Vani Xu</p>
             </Link>
@@ -35,7 +35,7 @@ function Home() {
             </Link>
           </div>
           <div className="col col1">
-            <Link to={`/Setting/${voucher_id}`}>
+            <Link to={`lotteria/setting/${voucher_id}`}>
               <img className="icon2 " src={nha4} alt />
               <p className="txt2">Cài đặt</p>
             </Link>
