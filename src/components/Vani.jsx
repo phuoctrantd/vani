@@ -181,7 +181,7 @@ function Vani() {
             </Link>
           </div>
           <div className="col col1">
-          <Link to={`/lotteria/coin/${voucher_id}`}>
+          <Link to={`/lotteria/coin/?voucher_id=${voucher_id}`}>
             <img className="icon2" src={nha2} alt />
             <p className="txt2">Vani Xu</p>
             </Link>
@@ -193,7 +193,7 @@ function Vani() {
             </button>
           </div>
           <div className="col col1">
-          <Link to={`/lotteria/setting/${voucher_id}`}>
+          <Link to={`/lotteria/setting/?voucher_id=${voucher_id}`}>
             <img className="icon2" src={nha4} alt />
             <p className="txt2">Cài đặt</p>
             </Link>
