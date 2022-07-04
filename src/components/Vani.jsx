@@ -23,18 +23,17 @@ function Vani() {
   const md5VoucherId = md5(voucher_id);
   const axios = require('axios').default;
   const [coupons, setCoupons] = useState("")
-  const params = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop),
-  });
+  
+
 
   useEffect(() => {
-    axios.get("https://my-json-server.typicode.com/phong-phung-phinh/vani/vani_key")
+    axios.get("https://vani-app-api.herokuapp.com/vani_key")
       .then(res => {
         setCoupons(res.data.coupons);
       })
   }, [axios])
 
- 
+ console.log(md5VoucherId);
   
 
   return (
