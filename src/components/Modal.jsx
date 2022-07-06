@@ -1,9 +1,7 @@
 import React from "react";
-
+import Barcode from "react-barcode";
 function Modal({ setOpenModal, voucher_id }) {
-    
   return (
-    
     <>
       <div id="modals">
         <div id="myModal" className="modal fade" role="dialog" required>
@@ -27,10 +25,11 @@ function Modal({ setOpenModal, voucher_id }) {
                 <p className="txtga">Set Gà Rán Lotteria</p>
                 <p className="txtend">Hết hạn ngày 31/07/2022</p>
                 <div className="barcode">
-                  <img
-                    src={`https://img.giftpop.vn/barcode.php?barcode=${voucher_id}&mode=3`}
-                    width={280}
+                  <Barcode
+                    value={voucher_id}
                     height={200}
+                    width={2.6}
+                    displayValue={false}
                   />
                 </div>
                 <div className="barcodeNum ">{voucher_id}</div>

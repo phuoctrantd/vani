@@ -17,7 +17,9 @@ import { md5 } from "../md5";
 import NotFound from "./NotFound";
 import { Link } from "react-router-dom";
 
+
 function Vani() {
+  
   const [modalOpen, setModalOpen] = useState(0, 1, 2);
   const { voucher_id } = useParams();
   const md5VoucherId = md5(voucher_id);
@@ -33,7 +35,7 @@ function Vani() {
       })
   }, [axios])
 
- console.log(md5VoucherId);
+
   
 
   return (
